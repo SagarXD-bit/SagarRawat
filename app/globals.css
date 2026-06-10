@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050816;
+  --foreground: #edf2ff;
+  --muted: #9aa6c4;
+  --muted-foreground: #b6c0d7;
+  --border: rgba(148, 163, 184, 0.14);
+  --panel: rgba(9, 14, 30, 0.72);
+  --panel-strong: rgba(11, 17, 36, 0.92);
+  --accent: #7dd3fc;
+  --accent-strong: #8b5cf6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(139, 92, 246, 0.12), transparent 26%),
+    linear-gradient(180deg, #060913 0%, #070b17 40%, #050816 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  opacity: 0.35;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: rgba(125, 211, 252, 0.25);
+  color: #fff;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7), rgba(8, 12, 24, 0.86));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 24px 80px rgba(2, 6, 23, 0.42);
+}
+
+.section-line {
+  position: relative;
+}
+
+.section-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.2), transparent);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #f8fbff 15%, #9bdcff 55%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mask-fade {
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
