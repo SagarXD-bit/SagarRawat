@@ -171,8 +171,8 @@ export const socials = [
   },
   {
     label: "Email",
-    href: "mailto:hello@sagarrawat.dev",
-    value: "hello@sagarrawat.dev",
+    href: "mailto:sagarrawatinvincible@gmail.com",
+    value: "sagarrawatinvincible@gmail.com",
   },
 ] as const;
 

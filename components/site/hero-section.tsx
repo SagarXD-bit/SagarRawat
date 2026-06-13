@@ -90,7 +90,7 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href="mailto:hello@sagarrawat.dev?subject=Resume%20Request">
+                <Link href="mailto:sagarrawatinvincible@gmail.com?subject=Resume%20Request">
                   Download Resume
                   <Download className="size-4" />
                 </Link>
@@ -131,10 +131,10 @@ export function HeroSection() {
               </div>
               <div className="mask-fade rounded-[20px] border border-white/8 bg-gradient-to-b from-white/[0.03] to-transparent p-3 pt-12">
                 <Image
-                  src="/profile-placeholder.svg"
-                  alt="Abstract profile placeholder for Sagar Rawat"
-                  width={640}
-                  height={720}
+                  src="/profile-placeholder.jpg"
+                  alt="Sagar Rawat"
+                  width={1080}
+                  height={1350}
                   priority
                   className="h-auto w-full rounded-[18px]"
                 />

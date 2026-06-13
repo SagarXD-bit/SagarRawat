@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Send } from "lucide-react";
+import { ArrowUpRight, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { type FormEvent, useState } from "react";
 
 import { Reveal } from "@/components/motion/reveal";
@@ -20,23 +20,43 @@ export function ContactSection() {
     project: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
+  const [statusMessage, setStatusMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setIsLoading(true);
+    setStatus(null);
 
-    const subject = encodeURIComponent(
-      formData.project || `Portfolio enquiry from ${formData.name || "a visitor"}`,
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${formData.name || "Not provided"}`,
-        `Email: ${formData.email || "Not provided"}`,
-        "",
-        formData.message || "Hi Sagar, I'd love to connect.",
-      ].join("\n"),
-    );
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    window.location.href = `mailto:hello@sagarrawat.dev?subject=${subject}&body=${body}`;
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send email");
+      }
+
+      setStatus("success");
+      setStatusMessage("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", project: "", message: "" });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setStatus(null), 5000);
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(
+        error instanceof Error ? error.message : "Failed to send message. Please try again."
+      );
+      console.error("Form submission error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -120,14 +140,43 @@ export function ContactSection() {
                   }
                 />
               </label>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-slate-400">
-                  This form opens your email client so the message is easy to customize.
-                </p>
-                <Button type="submit" size="lg">
-                  Send Message
-                  <Send className="size-4" />
-                </Button>
+              <div className="space-y-3">
+                {status === "success" && (
+                  <div className="flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3 text-sm text-emerald-300">
+                    <CheckCircle className="size-4 flex-shrink-0" />
+                    <p>{statusMessage}</p>
+                  </div>
+                )}
+                {status === "error" && (
+                  <div className="flex items-center gap-2 rounded-lg bg-red-500/10 border border-red-500/30 p-3 text-sm text-red-300">
+                    <AlertCircle className="size-4 flex-shrink-0" />
+                    <p>{statusMessage}</p>
+                  </div>
+                )}
+
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-sm text-slate-400">
+                    Your message will be sent directly to my email inbox.
+                  </p>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isLoading}
+                    className="disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <>
+                        <span className="inline-block animate-spin mr-2">⏳</span>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="size-4" />
+                      </>
+                    )}
+                  </Button>
+                </div>
               </div>
             </form>
           </Card>

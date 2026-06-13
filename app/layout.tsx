@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { HashScrollHandler } from "./hash-scroll-handler";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -64,6 +65,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden bg-background font-sans text-foreground">
+        <HashScrollHandler />
         {children}
       </body>
     </html>
