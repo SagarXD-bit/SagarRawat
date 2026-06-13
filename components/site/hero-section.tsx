@@ -29,7 +29,7 @@ function RotatingKeyword() {
   }, [shouldReduceMotion]);
 
   return (
-    <span className="relative inline-flex min-w-[14ch] justify-start text-sky-200">
+  <span className="relative inline-flex min-w-[14ch] justify-start text-sky-200">
       <motion.span
         key={heroKeywords[index]}
         initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
@@ -90,10 +90,10 @@ export function HeroSection() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href="mailto:sagarrawatinvincible@gmail.com?subject=Resume%20Request">
-                  Download Resume
-                  <Download className="size-4" />
-                </Link>
+                <a href="/resume.pdf" download>
+                 Download Resume
+                 <Download className="size-4" />
+               </a>
               </Button>
               <Button asChild size="lg" variant="ghost">
                 <Link href="#contact">

@@ -125,49 +125,83 @@ export const projects = [
 
 export const timeline = [
   {
-    period: "Add Date Range",
-    title: "Internship / Experience Slot",
-    organisation: "Company or startup name",
+    period: "2022",
+    title: "Started Computer Science Journey",
+    organisation: "Chandigarh University",
     description:
-      "Use this card to highlight your role, the stack you worked with, and the measurable outcome you helped ship.",
-    tags: ["Ownership", "Delivery", "Teamwork"],
+      "Began my B.E. in Computer Science and Engineering. Built my first web development projects while learning programming fundamentals, software development principles, and problem-solving techniques.",
+    tags: ["Computer Science", "Web Development", "Learning"],
   },
   {
-    period: "Add Date Range",
-    title: "Research Paper / Technical Study",
-    organisation: "Conference, journal, or university",
+    period: "2023",
+    title: "Building Development Skills",
+    organisation: "Academic & Personal Projects",
     description:
-      "Summarize your research focus, the problem explored, and the result or learning that makes it noteworthy.",
-    tags: ["Research", "TinyML", "Applied AI"],
+      "Developed increasingly complex software applications including a Hospital Management System. Strengthened full-stack development skills and started actively maintaining my GitHub portfolio.",
+    tags: ["Java", "Software Engineering", "GitHub"],
+    link: "YOUR_GITHUB_URL",
+    linkLabel: "View GitHub",
   },
   {
-    period: "Add Date Range",
-    title: "Certification / Advanced Training",
-    organisation: "Platform or provider",
+    period: "2024",
+    title: "First Springer Research Publication",
+    organisation: "ICSC 2025",
     description:
-      "Document a certification that strengthened your fundamentals in cloud, AI, backend systems, or modern frontend engineering.",
-    tags: ["Certification", "Growth", "Depth"],
+      "Published 'Enhancing Textual Understanding in ChatGPT', a research study focused on improving contextual understanding and response quality in large language models. Expanded my research experience through academic writing and technical investigation.",
+    tags: ["Research", "Springer", "LLMs"],
+    link: "https://doi.org/10.1007/978-981-95-6063-9_29",
+    linkLabel: "View Publication",
   },
   {
-    period: "Add Date Range",
-    title: "Achievement / Milestone",
-    organisation: "Hackathon, open source, or academic",
+    period: "2024",
+    title: "Technical Team Member",
+    organisation: "ISTE",
     description:
-      "Feature a standout achievement with context around why it mattered and what it says about the way you build.",
-    tags: ["Achievement", "Execution", "Curiosity"],
+      "Joined the technical team of ISTE and contributed to technical initiatives, collaborative projects, and student-driven innovation activities while strengthening leadership and teamwork skills.",
+    tags: ["Leadership", "Technical Team", "Collaboration"],
+    link: "/certificates/iste-certificate.pdf",
+    linkLabel: "View Certificate",
+  },
+  {
+    period: "2025",
+    title: "Advanced AI & Neuromorphic Research",
+    organisation: "SCIS 2025",
+    description:
+      "Published 'Event Driven Spiking Neural Network Using Analog Mixed Signals', exploring neuromorphic computing and event-driven spiking neural networks for efficient intelligent systems.",
+    tags: ["SNN", "Neuromorphic Computing", "AI Research"],
+    link: "https://doi.org/10.1007/978-3-032-22911-3_9",
+    linkLabel: "View Publication",
+  },
+  {
+    period: "2025-Present",
+    title: "AI, IoT & Edge Computing Projects",
+    organisation: "Independent Research & Development",
+    description:
+      "Working on advanced projects involving Edge Computing, TinyML, IoT systems, real-time monitoring solutions, and AI-powered applications while applying research concepts to practical engineering challenges.",
+    tags: ["Edge Computing", "TinyML", "IoT"],
+  },
+  {
+    period: "2026",
+    title: "Building Credify",
+    organisation: "AI-Powered Loan Analytics Platform",
+    description:
+      "Currently developing Credify, an AI-powered loan approval analytics platform that combines machine learning, intelligent reporting, data visualization, and predictive analytics to support data-driven decision making.",
+    tags: ["Machine Learning", "Analytics", "Full Stack"],
+    link: "#",
+    linkLabel: "Coming Soon",
   },
 ] as const;
 
 export const socials = [
   {
     label: "GitHub",
-    href: "https://github.com/your-handle",
-    value: "@your-handle",
+    href: "https://github.com/SagarXD-bit",
+    value: "@SagarXD-bit",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/your-handle",
-    value: "linkedin.com/in/your-handle",
+    href: "https://www.linkedin.com/in/sagar-rawat-8081ab24a",
+    value: "linkedin.com/in/sagar-rawat-8081ab24a",
   },
   {
     label: "Email",
