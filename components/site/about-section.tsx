@@ -9,21 +9,21 @@ import { aboutCards } from "@/lib/site-data";
 const journey = [
   {
     step: "01",
-    title: "Product-first mindset",
+    title: "Analytical problem solving",
     description:
-      "I like translating ideas into interfaces that feel intentional, useful, and ready for real users.",
+      "I enjoy breaking down complex problems, identifying patterns, and building practical solutions backed by data and technology.",
   },
   {
     step: "02",
-    title: "Modern engineering stack",
+    title: "Technology across domains",
     description:
-      "My toolkit centers on React, Next.js, TypeScript, backend services, and reliable deployment workflows.",
+      "My experience spans software development, data analysis, AI applications, and building systems that solve real-world challenges.",
   },
   {
     step: "03",
-    title: "AI curiosity with discipline",
+    title: "Continuous learning",
     description:
-      "I explore AI integrations where they create leverage, while keeping performance, clarity, and trust in view.",
+      "I stay curious about emerging technologies, adapting quickly while focusing on reliability, impact, and long-term value.",
   },
 ] as const;
 

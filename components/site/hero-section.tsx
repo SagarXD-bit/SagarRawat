@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -29,15 +29,22 @@ function RotatingKeyword() {
   }, [shouldReduceMotion]);
 
   return (
-  <span className="relative inline-flex min-w-[14ch] justify-start text-sky-200">
-      <motion.span
-        key={heroKeywords[index]}
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.28 }}
-      >
-        {heroKeywords[index]}
-      </motion.span>
+    <span className="relative inline-flex w-[min(22ch,100%)] max-w-full align-baseline text-sky-200">
+      <span className="invisible whitespace-nowrap">{heroKeywords[2]}</span>
+      <span className="absolute inset-0 overflow-hidden">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={heroKeywords[index]}
+            className="absolute inset-0 flex items-start whitespace-nowrap"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+            exit={shouldReduceMotion ? undefined : { opacity: 0, y: -10 }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
+          >
+            {heroKeywords[index]}
+          </motion.span>
+        </AnimatePresence>
+      </span>
     </span>
   );
 }
@@ -46,12 +53,12 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-5rem)] items-center py-14 sm:py-16 lg:py-20"
+      className="relative flex min-h-[calc(100vh-5rem)] items-center py-10 sm:py-12 lg:py-14"
     >
       <div className="absolute inset-x-0 top-12 -z-10 h-[32rem] rounded-full bg-[radial-gradient(circle_at_center,_rgba(125,211,252,0.14),_transparent_58%)] blur-3xl" />
 
       <div className="grid w-full items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-12">
-        <div className="space-y-8">
+        <div className="space-y-6 lg:space-y-7">
           <Reveal>
             <Badge className="gap-2 text-[11px] tracking-[0.24em]">
               <experiencePill.icon className="size-3.5 text-sky-200" />
@@ -59,7 +66,7 @@ export function HeroSection() {
             </Badge>
           </Reveal>
 
-          <div className="space-y-6">
+          <div className="space-y-5 lg:space-y-6">
             <Reveal delay={0.05}>
               <p className="font-mono text-xs tracking-[0.3em] text-slate-400 uppercase">
                 Sagar Rawat / Developer Portfolio
@@ -67,8 +74,12 @@ export function HeroSection() {
             </Reveal>
             <Reveal delay={0.1}>
               <h1 className="max-w-4xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl lg:leading-[1.02]">
-                Building <span className="text-gradient">thoughtful digital products</span>{" "}
-                across <RotatingKeyword />
+                <span className="block">
+                  Building <span className="text-gradient">thoughtful digital products</span>
+                </span>
+                <span className="mt-3 block sm:mt-4">
+                  across <RotatingKeyword />
+                </span>
               </h1>
             </Reveal>
             <Reveal delay={0.15}>

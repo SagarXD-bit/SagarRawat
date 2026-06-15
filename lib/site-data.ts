@@ -70,57 +70,50 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects = [
   {
-    title: "Ethara Workspace",
-    eyebrow: "Featured Product",
-    description:
-      "A premium workspace concept for modern teams, designed around collaboration, workflows, and a unified product experience.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "App Router",
-    ],
-    image: "/projects/ethara-workspace.svg",
-    github: "https://github.com/your-handle/ethara-workspace",
-    demo: "https://ethara-workspace-demo.vercel.app",
-    featured: true,
-    highlights: [
-      "Startup-style landing and dashboard storytelling",
-      "Refined component system with soft glass surfaces",
-      "Built for clarity, speed, and product-first presentation",
-    ],
+   title: "Credify",
+   eyebrow: "Featured Project",
+   description:
+     "AI-powered loan approval analytics and prediction platform that leverages machine learning models to assess creditworthiness, analyze applicant data, and provide intelligent approval recommendations.",
+   tech: [
+     "Python",
+     "Machine Learning",
+     "Flask",
+     "Pandas",
+     "Scikit-learn",
+   ],
+  image: "/projects/edge-vision-lab.svg",
+   github: "https://github.com/SagarXD-bit/Credify-AI-Powered-Loan-Approval-Analytics-Prediction-Platform",
+   demo: "YOUR_DEPLOYED_LINK",
+   featured: true,
+   highlights: [
+     "Machine learning based loan approval prediction",
+     "Interactive analytics dashboard and insights",
+     "Data-driven risk assessment and decision support",
+   ],
   },
-  {
-    title: "Signal Stack",
-    eyebrow: "Project Placeholder",
-    description:
-      "An analytics dashboard concept focused on readable metrics, alert routing, and confident operational decision-making.",
-    tech: ["React", "Node.js", "PostgreSQL"],
-    image: "/projects/signal-stack.svg",
-    github: "https://github.com/your-handle/signal-stack",
-    demo: "https://signal-stack-demo.vercel.app",
-  },
-  {
-    title: "Neural Notes",
-    eyebrow: "Project Placeholder",
-    description:
-      "A note-taking experience that explores AI-assisted summarization, semantic search, and structured knowledge capture.",
-    tech: ["Next.js", "OpenAI", "TypeScript"],
-    image: "/projects/neural-notes.svg",
-    github: "https://github.com/your-handle/neural-notes",
-    demo: "https://neural-notes-demo.vercel.app",
-  },
-  {
-    title: "Edge Vision Lab",
-    eyebrow: "Project Placeholder",
-    description:
-      "A TinyML and computer vision showcase for lightweight inference workflows and edge-first experimentation.",
-    tech: ["Python", "TensorFlow", "TinyML"],
-    image: "/projects/edge-vision-lab.svg",
-    github: "https://github.com/your-handle/edge-vision-lab",
-    demo: "https://edge-vision-lab-demo.vercel.app",
-  },
+ {
+  title: "HealthTrack",
+  eyebrow: "Full Stack Project",
+  description:
+    "A web-based hospital management platform for handling patient records, appointments, doctor management, and administrative workflows through a centralized dashboard.",
+  tech: ["Java", "MySQL", "HTML", "CSS", "JavaScript"],
+  image: "/projects/ethara-workspace.svg",
+  github: "https://github.com/SagarXD-bit/HealthTrack",
+  demo: "https://health-track.bytexl.live/",
+ },
+
+
+ {
+  title: "Real-Time IoT Communication Simulator",
+  eyebrow: "IoT & WebSockets",
+  description:
+    "A real-time IoT communication platform that simulates sensor devices and streams live data through WebSockets.",
+  tech: ["Python", "WebSockets", "HTML", "JavaScript"],
+  image: "/projects/signal-stack.svg",
+  github: "https://github.com/your-handle/iot-simulator",
+  demo:"https://your-demo-url.vercel.app",
+  demoMessage:"This project relies on locally simulated IoT devices and WebSocket communication, so a live cloud demo is not available. Please view the source code, architecture, and setup guide on GitHub",
+ },
 ] as const;
 
 export const timeline = [
@@ -211,13 +204,18 @@ export const socials = [
 ] as const;
 
 export const heroStats = [
-  { label: "Focus", value: "Full-Stack + AI" },
-  { label: "Style", value: "Clean, fast, premium" },
-  { label: "Mindset", value: "Ship with intent" },
+  { label: "Focus", value: "Technology & Analytics" },
+  { label: "Strength", value: "Problem Solving" },
+  { label: "Mindset", value: "Continuous Learning" },
 ] as const;
 
-export const heroKeywords = ["full-stack systems", "AI-driven products", "modern web interfaces"] as const;
-
+export const heroKeywords = [
+  "Software engineering",
+  "Data analytics",
+  "AI-powered solutions",
+  "Business intelligence",
+  "Digital products",
+] as const;
 export const experiencePill = {
   label: "Available for impactful internships, freelance, and product collaborations",
   icon: Rocket,
