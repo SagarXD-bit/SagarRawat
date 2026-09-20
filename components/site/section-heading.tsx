@@ -23,10 +23,10 @@ export function SectionHeading({
     >
       <Badge>{eyebrow}</Badge>
       <div className="space-y-3">
-        <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-sand sm:text-4xl">
           {title}
         </h2>
-        <p className="text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
+        <p className="text-base leading-8 text-stone-300 sm:text-lg">{description}</p>
       </div>
     </div>
   );

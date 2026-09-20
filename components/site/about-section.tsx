@@ -42,13 +42,13 @@ export function AboutSection() {
             <div className="space-y-4">
               {journey.map((item, index) => (
                 <Reveal key={item.step} delay={0.08 * (index + 1)}>
-                  <div className="flex gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-5">
-                    <div className="font-mono text-xs tracking-[0.3em] text-sky-200 uppercase">
+                  <div className="flex gap-4 rounded-3xl border border-[rgba(232,196,168,0.12)] bg-white/[0.035] p-5">
+                    <div className="font-mono text-xs tracking-[0.3em] text-clay uppercase">
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-300">
+                      <h3 className="text-lg font-semibold text-sand">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-stone-300">
                         {item.description}
                       </p>
                     </div>
@@ -67,10 +67,10 @@ export function AboutSection() {
               className={index === 0 ? "sm:col-span-2" : undefined}
             >
               <Card className="h-full rounded-[30px] p-6">
-                <h3 className="font-display text-xl font-semibold text-white">
+                <h3 className="font-display text-xl font-semibold text-sand">
                   {card.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-stone-300">
                   {card.description}
                 </p>
               </Card>
