@@ -68,53 +68,86 @@ export const skillGroups: SkillGroup[] = [
   },
 ] as const;
 
-export const projects = [
+export type Project = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  tech: readonly string[];
+  image: string;
+  github: string;
+  demo?: string;
+  featured?: boolean;
+  highlights?: readonly string[];
+};
+
+export const projects: Project[] = [
   {
-   title: "Credify",
-   eyebrow: "Featured Project",
-   description:
-     "AI-powered loan approval analytics and prediction platform that leverages machine learning models to assess creditworthiness, analyze applicant data, and provide intelligent approval recommendations.",
-   tech: [
-     "Python",
-     "Machine Learning",
-     "Flask",
-     "Pandas",
-     "Scikit-learn",
-   ],
-  image: "/projects/edge-vision-lab.svg",
-   github: "https://github.com/SagarXD-bit/Credify-AI-Powered-Loan-Approval-Analytics-Prediction-Platform",
-   demo: "YOUR_DEPLOYED_LINK",
-   featured: true,
-   highlights: [
-     "Machine learning based loan approval prediction",
-     "Interactive analytics dashboard and insights",
-     "Data-driven risk assessment and decision support",
-   ],
+    title: "MindMail AI",
+    eyebrow: "Featured Project",
+    description:
+      "AI-powered email intelligence platform that fetches inbox mail, classifies category and urgency, drafts context-aware replies, tracks follow-ups, and surfaces response analytics.",
+    tech: ["React", "TypeScript", "FastAPI", "MySQL", "Tailwind CSS"],
+    image: "/projects/mindmail.jpg",
+    github: "https://github.com/SagarXD-bit/MindMail-Ai",
+    demo: "https://mind-mail-ai-tau.vercel.app/",
+    featured: true,
+    highlights: [
+      "AI categorization with urgency, confidence, and explanations",
+      "Human-in-the-loop reply engine with multiple tones",
+      "Follow-up tracker and response analytics dashboard",
+    ],
   },
- {
-  title: "HealthTrack",
-  eyebrow: "Full Stack Project",
-  description:
-    "A web-based hospital management platform for handling patient records, appointments, doctor management, and administrative workflows through a centralized dashboard.",
-  tech: ["Java", "MySQL", "HTML", "CSS", "JavaScript"],
-  image: "/projects/ethara-workspace.svg",
-  github: "https://github.com/SagarXD-bit/HealthTrack",
-  demo: "https://health-track.bytexl.live/",
- },
-
-
- {
-  title: "Real-Time IoT Communication Simulator",
-  eyebrow: "IoT & WebSockets",
-  description:
-    "A real-time IoT communication platform that simulates sensor devices and streams live data through WebSockets.",
-  tech: ["Python", "WebSockets", "HTML", "JavaScript"],
-  image: "/projects/signal-stack.svg",
-  github: "https://github.com/your-handle/iot-simulator",
-  demo:"https://your-demo-url.vercel.app",
-  demoMessage:"This project relies on locally simulated IoT devices and WebSocket communication, so a live cloud demo is not available. Please view the source code, architecture, and setup guide on GitHub",
- },
-] as const;
+  {
+    title: "Credify",
+    eyebrow: "AI / Analytics",
+    description:
+      "Loan approval intelligence platform with a React dashboard and FastAPI + scikit-learn backend for training models, predicting approvals, and exploring applicant data.",
+    tech: ["React", "FastAPI", "scikit-learn", "PostgreSQL", "Vercel"],
+    image: "/projects/credify.jpg",
+    github:
+      "https://github.com/SagarXD-bit/Credify-AI-Powered-Loan-Approval-Analytics-Prediction-Platform",
+    demo: "https://credify-phi-eight.vercel.app/",
+  },
+  {
+    title: "TrackDesk",
+    eyebrow: "SaaS",
+    description:
+      "Ticket and order management platform with KPI dashboards, a 10-status repair workflow, customer records, QR tracking, and printable tickets.",
+    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
+    image: "/projects/trackdesk.jpg",
+    github: "https://github.com/SagarXD-bit/TrackDesk",
+    demo: "https://track-desk-chi.vercel.app/dashboard",
+  },
+  {
+    title: "Uber Clone",
+    eyebrow: "Maps / Product",
+    description:
+      "Full ride-hailing clone with GPS pickup, live maps, rider and driver modes, upfront fares in INR, and trip history — built for Vercel.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Google Maps"],
+    image: "/projects/uber.jpg",
+    github: "https://github.com/SagarXD-bit/Uber",
+    demo: "https://uber-ten-bay.vercel.app/",
+  },
+  {
+    title: "HealthTrack",
+    eyebrow: "Full Stack",
+    description:
+      "Hospital management platform for patient records, appointments, doctor workflows, and admin operations through a centralized dashboard.",
+    tech: ["Java", "MySQL", "HTML", "CSS", "JavaScript"],
+    image: "/projects/healthtrack.jpg",
+    github: "https://github.com/SagarXD-bit/HealthTrack",
+    demo: "https://health-track.bytexl.live/",
+  },
+  {
+    title: "Night Shift",
+    eyebrow: "Game",
+    description:
+      "Pygame office-survival game: keep the lights on, watch CCTV, and last from midnight to 6 AM as power drains and the building goes dark.",
+    tech: ["Python", "Pygame"],
+    image: "/projects/night-shift.svg",
+    github: "https://github.com/SagarXD-bit/Night-shift-usign-pygame",
+  },
+];
 
 export const timeline = [
   {
@@ -180,8 +213,8 @@ export const timeline = [
     description:
       "Currently developing Credify, an AI-powered loan approval analytics platform that combines machine learning, intelligent reporting, data visualization, and predictive analytics to support data-driven decision making.",
     tags: ["Machine Learning", "Analytics", "Full Stack"],
-    link: "#",
-    linkLabel: "Coming Soon",
+    link: "https://credify-phi-eight.vercel.app/",
+    linkLabel: "View Live Demo",
   },
 ] as const;
 
