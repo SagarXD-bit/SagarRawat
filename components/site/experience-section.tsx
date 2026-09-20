@@ -54,7 +54,22 @@ export function ExperienceSection() {
                         </Badge>
                       ))}
                     </div>
-                    {"link" in item && item.link ? (
+                    {"links" in item && item.links ? (
+                      <div className="mt-4 flex flex-wrap gap-4">
+                        {item.links.map((entry) => (
+                          <Link
+                            key={entry.href}
+                            href={entry.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm text-clay hover:text-sand"
+                          >
+                            {entry.label}
+                            <ArrowUpRight className="size-3.5" />
+                          </Link>
+                        ))}
+                      </div>
+                    ) : "link" in item && item.link ? (
                       <Link
                         href={item.link}
                         target={item.link.startsWith("http") ? "_blank" : undefined}

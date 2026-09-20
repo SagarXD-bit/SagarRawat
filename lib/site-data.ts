@@ -174,9 +174,17 @@ export const timeline = [
     organisation: "ICSC 2025",
     description:
       "Published 'Enhancing Textual Understanding in ChatGPT', a research study focused on improving contextual understanding and response quality in large language models. Expanded my research experience through academic writing and technical investigation.",
-    tags: ["Research", "Springer", "LLMs"],
-    link: "https://doi.org/10.1007/978-981-95-6063-9_29",
-    linkLabel: "View Publication",
+    tags: ["Research", "Springer", "Scopus", "LLMs"],
+    links: [
+      {
+        href: "https://doi.org/10.1007/978-981-95-6063-9_29",
+        label: "Springer",
+      },
+      {
+        href: "https://www.scopus.com/pages/publications/105031884772?origin=resultslist",
+        label: "Scopus",
+      },
+    ],
   },
   {
     period: "2024",
@@ -194,9 +202,17 @@ export const timeline = [
     organisation: "SCIS 2025",
     description:
       "Published 'Event Driven Spiking Neural Network Using Analog Mixed Signals', exploring neuromorphic computing and event-driven spiking neural networks for efficient intelligent systems.",
-    tags: ["SNN", "Neuromorphic Computing", "AI Research"],
-    link: "https://doi.org/10.1007/978-3-032-22911-3_9",
-    linkLabel: "View Publication",
+    tags: ["SNN", "Neuromorphic Computing", "Scopus"],
+    links: [
+      {
+        href: "https://link.springer.com/chapter/10.1007/978-3-032-22911-3_9",
+        label: "Springer",
+      },
+      {
+        href: "https://www.scopus.com/pages/publications/105039325183?origin=resultslist",
+        label: "Scopus",
+      },
+    ],
   },
   {
     period: "2025-Present",
